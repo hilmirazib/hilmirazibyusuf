@@ -1,7 +1,12 @@
 import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata = { title: "Blog" };
+export const metadata = buildMetadata({
+  title: "Blog",
+  description: "Latest articles and notes.",
+  url: "/blog",
+});
 
 export default function BlogPage() {
   const posts = getAllPosts();

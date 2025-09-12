@@ -1,9 +1,24 @@
 import { notFound } from "next/navigation";
 import { getAllPostSlugs, getPostBySlug } from "@/lib/posts";
 import { MDXContent } from "@/lib/mdx";
+import { buildMetadata } from "@/lib/seo";
 
 export async function generateStaticParams() {
   return getAllPostSlugs().map((slug) => ({ slug }));
+}
+
+export function generateMetadata({ params }: { params: { slug: string } }) {
+  const { slug } = params;
+  try {
+    const post = getPostBySlug(slug);
+    return buildMetadata({
+      title: post.meta.title,
+      description: post.meta.description,
+      url: `/blog/${slug}`,
+    });
+  } catch {
+    return buildMetadata({ title: "Not found" });
+  }
 }
 
 export default function PostPage({ params }: { params: { slug: string } }) {
