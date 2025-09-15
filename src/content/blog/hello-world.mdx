@@ -2,9 +2,47 @@
 title: "Hello World"
 description: "Post pertama di portfolio"
 date: "2025-09-12"
-tags: ["intro"]
+tags: ["intro", "mdx"]
 ---
 
 # Hello World 👋
 
-Ini postingan pertama saya di blog portfolio.
+Selamat datang di blog ini! Postingan ini untuk mengetes semua fitur **MDX**.
+
+## Callout
+
+<Callout type="info" title="Note">
+  Ini adalah contoh callout tipe **info**.
+</Callout>
+
+<Callout type="warn" title="Warning">
+  Perhatikan bahwa ini contoh callout tipe **warn**.
+</Callout>
+
+<Callout type="success" title="Success">
+  Mantap, callout tipe **success** juga bekerja!
+</Callout>
+
+## Tabel
+
+| Fitur        | Status   |
+|--------------|----------|
+| MDX          | ✅ Ready |
+| Typography   | ✅ Ready |
+| Code Block   | ✅ Ready |
+| Callout      | ✅ Ready |
+| Table        | ✅ Ready |
+| remarkGfm    | ✅ Ready |
+
+## Code Block
+
+```ts
+// Contoh kode TypeScript
+type User = {
+  id: number;
+  name: string;
+};
+
+const hello = (u: User) => {
+  console.log(`Hello, ${u.name}!`);
+};

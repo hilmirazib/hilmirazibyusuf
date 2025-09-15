@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 import Navbar from "@/components/organisms/Navbar";
 import Footer from "@/components/organisms/Footer";
+import "highlight.js/styles/github-dark.css";
+
 
 export const metadata = { title: "Portfolio" };
 
