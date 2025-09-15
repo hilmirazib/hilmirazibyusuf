@@ -2,7 +2,8 @@ import type { ReactNode } from "react";
 import Navbar from "@/components/organisms/Navbar";
 import Footer from "@/components/organisms/Footer";
 import "highlight.js/styles/github-dark.css";
-
+import AnalyticsProvider from "@/providers/analytics-provider";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 
 export const metadata = { title: "Portfolio" };
 
@@ -20,6 +21,8 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
         {children}
       </main>
       <Footer />
+      <AnalyticsProvider />
+      <VercelAnalytics />
     </>
   );
 }
