@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Portfolio Website",
+    "slug": "portfolio",
+    "summary": "Personal portfolio built with Next.js + MDX",
+    "link": "https://myportfolio.com"
+  },
+  {
+    "title": "Kos Management System",
+    "slug": "kos-app",
+    "summary": "Room & payment management built with CodeIgniter 3",
+    "link": "https://github.com/username/kos-app"
+  }
+]
