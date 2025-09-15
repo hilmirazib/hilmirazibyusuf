@@ -1,4 +1,5 @@
 import data from "@/data/projects.json";
+import ProjectCard from "@/components/molecules/ProjectCard";
 
 export const metadata = {
   title: "Projects",
@@ -9,14 +10,9 @@ export default function ProjectsPage() {
   return (
     <main className="max-w-3xl mx-auto px-4 py-10">
       <h1 className="text-3xl font-bold mb-6">Projects</h1>
-      <ul className="space-y-6">
+      <ul className="grid gap-4">
         {data.map((p) => (
-          <li key={p.slug}>
-            <a href={p.link} className="text-lg font-medium underline">
-              {p.title}
-            </a>
-            <p className="text-sm text-zinc-600">{p.summary}</p>
-          </li>
+          <ProjectCard key={p.slug ?? p.title} {...p} />
         ))}
       </ul>
     </main>
