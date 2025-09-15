@@ -1,5 +1,3 @@
----
-
 # 📚 Portfolio Blog – Next.js + MDX + Drizzle
 
 Personal portfolio + blog built with **Next.js App Router**, **TypeScript**, **TailwindCSS**, **MDX**, and **Postgres (Neon) + Drizzle ORM**.
