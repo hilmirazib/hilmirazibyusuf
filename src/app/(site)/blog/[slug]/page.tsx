@@ -3,6 +3,9 @@ import { getAllPostSlugs, getPostBySlug } from "@/lib/posts";
 import { MDXContent } from "@/lib/mdx";
 import { buildMetadata } from "@/lib/seo";
 
+import ViewCounter from "@/components/molecules/ViewCounter";
+import Reactions from "@/components/molecules/Reactions"; 
+
 export async function generateStaticParams() {
   return getAllPostSlugs().map((slug) => ({ slug }));
 }
@@ -30,7 +33,9 @@ export default function PostPage({ params }: { params: { slug: string } }) {
     <article className="max-w-3xl mx-auto px-4 py-10 prose prose-zinc dark:prose-invert">
       <h1 className="mb-2">{post.meta.title}</h1>
       <p className="text-sm text-zinc-500">{new Date(post.meta.date).toDateString()}</p>
+      <ViewCounter slug={slug} />
       <MDXContent source={post.content} />
+      <Reactions slug={slug} />
     </article>
   );
 }

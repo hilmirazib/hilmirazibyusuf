@@ -1,0 +1,39 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: my-portfolio-postgres
+    environment:
+      - POSTGRES_USER=myuser
+      - POSTGRES_PASSWORD=mypassword
+      - POSTGRES_DB=mydb
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  adminer:
+    image: adminer:latest
+    container_name: my-portfolio-adminer
+    ports:
+      - '8080:8080'
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+  # refresher:
+  #   image: bitnami/crontab:latest
+  #   container_name: mv_refresher
+  #   depends_on:
+  #     - postgres
+  #   volumes:
+  #     - ./scripts:/app/scripts
+  #   environment:
+  #     - DATABASE_URL=postgres://myuser:mypassword@postgres:5432/mydb
+  #   command: >
+  #     bash -c "echo '* * * * * node /app/scripts/refresh-mv.js >> /proc/1/fd/1 2>&1' | crontab - && crond -f"
+  #   working_dir: /app
+
+volumes:
+  postgres-data:
