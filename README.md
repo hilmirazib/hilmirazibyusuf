@@ -166,7 +166,7 @@ volumes:
 * [x] Analytics (Umami)
 * [x] Views + Reactions (Drizzle + Postgres)
 * [x] Materialized View + cron refresh
-* [ ] OG image generator (optional)
+* [x] OG image generator (optional)
 * [ ] Deploy to Vercel + Neon
 
 ---
