@@ -18,6 +18,7 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
       title: post.meta.title,
       description: post.meta.description,
       url: `/blog/${slug}`,
+      image: `/og/image?title=${encodeURIComponent(post.meta.title)}`,
     });
   } catch {
     return buildMetadata({ title: "Not found" });
