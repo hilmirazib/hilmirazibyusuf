@@ -1,35 +1,45 @@
-import TextLink from "@/components/core/TextLink";
+import Link from "next/link";
+import Image from "next/image";
+import PostViewsBadge from "@/components/molecules/PostViewsBadge";
 
 export type PostCardProps = {
   slug: string;
   title: string;
   description?: string;
   date: string;
-  tags?: string[];
+  cover?: string;
 };
 
-export default function PostCard({ slug, title, description, date, tags }: PostCardProps) {
+export default function PostCard({ slug, title, description, date, cover }: PostCardProps) {
   return (
-    <article className="rounded-lg border p-4 transition hover:bg-zinc-50">
-      <h3 className="text-lg font-semibold">
-        <TextLink href={`/blog/${slug}`} underline="none" className="underline">
+    <li className="flex gap-4">
+      <div className="relative h-14 w-14 flex-none overflow-hidden rounded-lg border border-zinc-800/80 bg-zinc-800/40">
+        {cover ? <Image src={cover} alt="" fill className="object-cover" /> : null}
+      </div>
+
+      <div className="min-w-0 flex-1">
+        <div className="flex items-center gap-2 text-xs text-zinc-400">
+          <time dateTime={date}>
+            {new Date(date).toLocaleDateString(undefined, {
+              month: "short",
+              day: "2-digit",
+            })}
+          </time>
+          <span>·</span>
+          <PostViewsBadge slug={slug} />
+        </div>
+
+        <Link
+          href={`/blog/${slug}`}
+          className="mt-1 block text-[15px] font-medium leading-snug hover:underline"
+        >
           {title}
-        </TextLink>
-      </h3>
-      <p className="mt-1 text-sm text-zinc-500">{new Date(date).toDateString()}</p>
-      {description && <p className="mt-2 text-zinc-700">{description}</p>}
-      {tags && tags.length > 0 && (
-        <ul className="mt-3 flex flex-wrap gap-2">
-          {tags.map((t) => (
-            <li
-              key={t}
-              className="rounded-full bg-zinc-100 px-2 py-0.5 text-xs text-zinc-700"
-            >
-              #{t}
-            </li>
-          ))}
-        </ul>
-      )}
-    </article>
+        </Link>
+
+        {description && (
+          <p className="mt-1 line-clamp-2 text-sm text-zinc-400">{description}</p>
+        )}
+      </div>
+    </li>
   );
 }
