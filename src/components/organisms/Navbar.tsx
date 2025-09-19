@@ -22,11 +22,10 @@ export default function Navbar() {
       : pathname === href || pathname?.startsWith(href + "/");
 
   return (
-    <header className="sticky top-0 z-40 border-b bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
-      <nav className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
+    <header className="sticky top-0 z-40 bg-transparent/80 backdrop-blur supports-[backdrop-filter]:bg-transparent/60">
+      <nav className="mx-auto flex max-w-3xl items-center justify-between px-4 py-3">
         <Link href="/" className="font-semibold tracking-tight">
-          {/* ganti dengan logo/initial kamu kalau mau */}
-          MyPortfolio
+          Hilmi Razib Yusuf
         </Link>
 
         {/* Desktop nav */}
