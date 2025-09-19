@@ -1,30 +1,39 @@
-import TextLink from "@/components/core/TextLink";
+import Link from "next/link";
+import Image from "next/image";
 
 export type ProjectCardProps = {
   title: string;
-  slug?: string;
   summary?: string;
   link?: string;
+  icon?: string; // optional avatar/icon
 };
 
-export default function ProjectCard({ title, summary, link }: ProjectCardProps) {
-  const Content = (
-    <div className="rounded-lg border p-4 transition hover:bg-zinc-50">
-      <h3 className="text-lg font-semibold">{title}</h3>
-      {summary && <p className="mt-2 text-zinc-700">{summary}</p>}
-      {link && (
-        <p className="mt-3">
-          <TextLink href={link} underline="always" target="_blank" rel="noreferrer">
-            Visit →
-          </TextLink>
-        </p>
-      )}
-    </div>
-  );
+export default function ProjectCard({ title, summary, link, icon }: ProjectCardProps) {
+  return (
+    <li className="flex gap-4">
+      {/* icon */}
+      <div className="relative h-11 w-11 flex-none overflow-hidden rounded-lg border border-zinc-800/70 bg-zinc-800/40">
+        {icon ? <Image src={icon} alt="" fill className="object-cover" /> : null}
+      </div>
 
-  return link ? (
-    <a href={link} target="_blank" rel="noreferrer" className="block">{Content}</a>
-  ) : (
-    Content
+      {/* text */}
+      <div className="min-w-0 flex-1">
+        {link ? (
+          <Link
+            href={link}
+            target="_blank"
+            rel="noreferrer"
+            className="font-medium hover:underline"
+          >
+            {title}
+          </Link>
+        ) : (
+          <span className="font-medium">{title}</span>
+        )}
+        {summary && (
+          <p className="mt-1 text-sm text-zinc-400">{summary}</p>
+        )}
+      </div>
+    </li>
   );
 }
