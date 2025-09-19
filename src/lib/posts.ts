@@ -9,6 +9,7 @@ export type PostMeta = {
   date: string;
   tags?: string[];
   cover?: string;
+  image?: string;
 };
 
 const BLOG_DIR = path.join(process.cwd(), "src/content/blog");
@@ -33,6 +34,7 @@ export function getPostBySlug(slug: string) {
       date: data.date ?? new Date().toISOString(),
       tags: data.tags ?? [],
       cover: data.cover ?? "",
+      image: data.image ?? "",
     } as PostMeta,
     content,
   };

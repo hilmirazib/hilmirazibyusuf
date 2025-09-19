@@ -1,8 +1,11 @@
 {
   "name": "Hilmi Razib Yusuf",
   "headline": "Fullstack Developer",
-  "bio": "Fullstack Developer with 3+ years of experience building scalable and modern web applications. Skilled in both frontend and backend development using Vue.js, Nuxt.js, React, Next.js, Node.js, and Laravel, as well as databases like MySQL, PostgreSQL, and MongoDB. Experienced in creating RESTful APIs, HRIS systems, company profile websites, and internal tools with optimized performance and responsive design.",
+  "bio1": "Innovative Fullstack Developer with 3+ years of experience designing and developing scalable web applications. Skilled in frontend and backend development with expertise in Vue.js, Nuxt.js, React, Next.js, Node.js, and Laravel. Proficient in databases such as MySQL, PostgreSQL, and MongoDB, with strong knowledge of RESTful APIs and system integrations.",
+  "bio2": "Proven track record in delivering HRIS systems, internal company tools, and SEO-optimized company profile websites. Adept at Agile practices (Scrum & Kanban), collaborating across teams, and ensuring application performance, responsiveness, and maintainability through clean architecture, reusable components, and clear documentation.",
   "moreLink": "/about",
+  "avatar": "/me.jpg",
+  "avatarCaption": "Tasikmalaya, Indonesia — Sep ’25",
   "socials": [
     { "label": "GitHub", "url": "https://github.com/hilmirazibyusuf" },
     { "label": "LinkedIn", "url": "https://www.linkedin.com/in/hilmirazibyusuf/" },

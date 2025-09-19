@@ -1,0 +1,34 @@
+[
+  {
+    "company": "PT. Sejahtera Inspeksi Indonesia – Sumedang",
+    "role": "Fullstack Developer (Freelance)",
+    "from": "Jan 2025",
+    "to": "Present",
+    "logo": "/images/companies/sejahtera-inspeksi.png",
+    "url": "sejahterainspeksiindonesia.id"
+  },
+  {
+    "company": "CV GTA – Yogyakarta",
+    "role": "Fullstack Developer (Contract)",
+    "from": "Aug 2023",
+    "to": "Feb 2024",
+    "logo": "/images/companies/cv-gta.png",
+    "url": "#"
+  },
+  {
+    "company": "KiriminAja – Yogyakarta",
+    "role": "Software Engineer (Contract)",
+    "from": "Jan 2023",
+    "to": "Aug 2024",
+    "logo": "/images/companies/kiriminaja.png",
+    "url": "https://kiriminaja.com"
+  },
+  {
+    "company": "Inolabs Indonesia – Yogyakarta",
+    "role": "Fullstack Developer",
+    "from": "Oct 2021",
+    "to": "Dec 2022",
+    "logo": "/images/companies/inolabs.png",
+    "url": "#"
+  }
+]
