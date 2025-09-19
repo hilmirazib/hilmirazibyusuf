@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import {
   FaGithub,
@@ -11,6 +12,23 @@ import {
 
 export default function Footer() {
   const year = new Date().getFullYear();
+  const [timeString, setTimeString] = useState("");
+
+  useEffect(() => {
+    // Function to update time
+    const updateTime = () => {
+      setTimeString(new Date().toLocaleTimeString());
+    };
+
+    // Update time immediately
+    updateTime();
+
+    // Set up interval to update time every second
+    const intervalId = setInterval(updateTime, 1000);
+
+    // Clean up interval on component unmount
+    return () => clearInterval(intervalId);
+  }, []);
 
   return (
     <footer className="mt-16">
@@ -69,7 +87,7 @@ export default function Footer() {
 
       <div className="mx-auto max-w-3xl flex flex-col md:flex-row justify-between items-center border-t border-zinc-800 px-4 py-6 text-xs text-zinc-500">
         <p>© {year}</p>
-        <p>{new Date().toLocaleTimeString()}</p>
+        <p>{timeString}</p>
       </div>
     </footer>
   );
